@@ -7,7 +7,7 @@ This project is a submission for **Round 1B** of the **Adobe India Hackathon 202
 
 ## 🧠 Problem Overview
 
-You are given 10–13 unstructured travel documents (PDFs). Based on a given **persona** and a **task** :
+You are given 10–13 unstructured documents (PDFs). Based on a given **persona** and a **task** :
 
 - Parse each document into semantically meaningful sections
 - Rank them based on relevance to the job and persona
@@ -52,11 +52,10 @@ docker run --rm -v $PWD/input:/app/input -v $PWD/output:/app/output adobe-hackat
 
 ## How It Works
 ### 🔍 Parsing with parser.py
-Uses PyMuPDF (fitz) to extract spans, layout, font sizes
+Uses PyMuPDF (fitz) to extract spans, layout
 
 Intelligent heading detection via font size + bold + regex
 
-Titles like "Coastal Adventures", "Christmas Traditions" are dynamically extracted without hardcoding
 
 ### 📊 Ranking with engine.py
 Each section is scored on 4 universal criteria:
