@@ -24,13 +24,13 @@ You are given 10–13 unstructured travel documents (PDFs). Based on a given **p
 git clone https://github.com/SaiMaruthiK/challenge_1b.git
 cd challenge_1b
 
-# Install dependencies
+## Install dependencies
 pip install -r requirements.txt
 
-# Download spaCy model
+## Download spaCy model
 python -m spacy download en_core_web_sm
 
-*Output*
+## *Output*
 python main.py \
   --input_dir input \
   --output_dir output \
