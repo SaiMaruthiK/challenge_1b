@@ -18,7 +18,7 @@ You are given 10–13 unstructured travel documents (PDFs). Based on a given **p
 
 ## 🚀 Quick Start
 
-### 1. Clone and Set Up
+## 1. Clone and Set Up
 
 
 git clone https://github.com/SaiMaruthiK/challenge_1b.git
@@ -38,11 +38,11 @@ python main.py \
   --job
 
 
-### Docker
-# Build image
+## Docker
+### Build image
 docker build -t adobe-hackathon .
 
-# Run container
+### Run container
 docker run --rm -v $PWD/input:/app/input -v $PWD/output:/app/output adobe-hackathon \
   --input_dir input \
   --output_dir output \
@@ -50,15 +50,15 @@ docker run --rm -v $PWD/input:/app/input -v $PWD/output:/app/output adobe-hackat
   --job "Plan a trip of 4 days for a group of 10 college friends."
 
 
-### How It Works
-## 🔍 Parsing with parser.py
+## How It Works
+### 🔍 Parsing with parser.py
 Uses PyMuPDF (fitz) to extract spans, layout, font sizes
 
 Intelligent heading detection via font size + bold + regex
 
 Titles like "Coastal Adventures", "Christmas Traditions" are dynamically extracted without hardcoding
 
-## 📊 Ranking with engine.py
+### 📊 Ranking with engine.py
 Each section is scored on 4 universal criteria:
 
 Semantic Similarity (via SentenceTransformer)
@@ -71,6 +71,6 @@ Text Quality Score (length, structure, uniqueness)
 
 A weighted ensemble ranks the top k=5 most relevant sections across all documents.
 
-## 🪄 Subsection Refinement
+### 🪄 Subsection Refinement
 Uses sentence-level importance (entity density, position, readability) to generate a polished summary.
 
